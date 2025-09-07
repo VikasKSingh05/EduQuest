@@ -1,8 +1,8 @@
 import React from "react";
 
-function navbar() {
+function Navbar() {
   return (
-    <div className="navbar bg-[#020617] shadow-sm md:px-50">
+    <div className="navbar bg-[#020617] shadow-sm md:px-50 border-b-1 border-slate-600 ">
       {/* Logo */}
       <img src="/image/coin.png" alt="" className="h-10 w-10 mr-5" />
       {/*title */}
@@ -78,4 +78,4 @@ function navbar() {
     </div>
   );
 }
-export default navbar;
+export default Navbar;

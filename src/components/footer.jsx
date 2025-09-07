@@ -1,6 +1,6 @@
 import React from "react";
 
-function footer() {
+function Footer() {
   return (
     <footer className="footer sm:footer-horizontal bg-[#0F172A] text-base-content p-10 pl-50">
       <nav>
@@ -48,4 +48,4 @@ function footer() {
     </footer>
   );
 }
-export default footer;
+export default Footer;

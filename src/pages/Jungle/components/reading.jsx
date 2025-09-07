@@ -2,7 +2,7 @@ import React from "react";
 
 function Reading() {
   return (
-    <div className="relative w-ful h-[50rem] flex flex-col bg-[#020617]">
+    <div id="read" className="relative w-ful h-[50rem] flex flex-col bg-[#020617]">
       <div className="m-15 text-center">
         <h1
           className="text-6xl [text-shadow:5px_5px_0_red] justify-between"

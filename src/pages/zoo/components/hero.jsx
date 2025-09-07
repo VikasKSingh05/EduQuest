@@ -2,22 +2,24 @@ import React from "react";
 
 export default function Hero() {
   const scrollToSection = () => {
-    const section = document.getElementById("read");
+    const section = document.getElementById("quiz");
     section.scrollIntoView({ behavior: "smooth" });
   };
   return (
     <div
       className="relative w-full h-[30rem] bg-cover bg-center flex items-center"
-      style={{ backgroundImage: `url("image/background_course1.gif")` }}
+      style={{ backgroundImage: `url("image/3.png")`}}
     >
-      <div className="absolute inset-0 bg-black/40"></div> {/* overlay */}
+      <div className="absolute inset-0 bg-cover bg-[position:-150px_0] " style={{ backgroundImage: `url("image/2.gif")`}} ></div> {/* overlay */}
+      <span className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30"></span>
+
       <div className="container mx-50 px-6 relative z-10 flex flex-col items-start md:w-2/3">
         {/* Heading */}
         <h1
-          className="text-5xl md:text-6xl font-bold text-white [text-shadow:5px_5px_0_black] mb-4"
+          className="text-5xl md:text-6xl w-110 font-bold text-white [text-shadow:5px_5px_0_black] mb-4"
           style={{ fontFamily: "heading" }}
         >
-          Jungle Science
+          Welcome to the Zoo
         </h1>
 
         {/* Description */}
@@ -35,7 +37,7 @@ export default function Hero() {
                    hover:translate-y-0.5 active:translate-y-2 transition-all"
           style={{ fontFamily: "button_text" }}
         >
-          Start Learning
+          PLAY
         </button>
       </div>
     </div>

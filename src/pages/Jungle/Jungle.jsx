@@ -1,10 +1,9 @@
 import React from "react";
 import Navbar from "../../components/navbar";
 import Hero from "./components/hero";
-import Quiz from "./components/quiz";
+import Quiz from "../../components/quiz";
 import Footer from "../../components/footer";
 import Reading from "./components/reading";
-import Game  from "./components/game";
 import '../../App.css';
 
 function Jungle(){
@@ -12,7 +11,6 @@ function Jungle(){
         <div>
             <Navbar />
             <Hero />
-            <Game />    
             <Reading />
             <Quiz />
             <Footer />

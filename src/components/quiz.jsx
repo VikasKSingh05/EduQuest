@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Profile from "./profile";
 import Score from "./score";
 import Cards from "./cards";
-import questions from "../questions";
+import questions from "../pages/Jungle/questions";
 
 function Quiz() {
   const [score, setScore] = useState(0);

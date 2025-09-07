@@ -19,6 +19,13 @@ function Landing() {
         >
           Go to Jungle Course
         </a>
+        <a
+          href="/zoo"
+          rel="noopener noreferrer"
+          className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700"
+        >
+          Go to Zoo
+        </a>
       </div>
       <Footer />
     </div>
