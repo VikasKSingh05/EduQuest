@@ -1,6 +1,7 @@
 import React from "react";
 import Gridlines from "react-gridlines";
 import { useNavigate } from "react-router-dom";
+import Navbar from '../components/navbar'
 import "../App.css";
 
 // Retro components 
@@ -24,24 +25,7 @@ export default function Landing() {
       />
 
       <div className="relative z-10">
-        <header className="text-white text-center bg-black flex items-center justify-between px-8 py-3 font-extrabold">
-          <div className="flex items-center">
-            <img src="forest.svg" alt="logo" className="w-10 h-10" />
-            <h1 className="text-lg font-bold pl-4" style={{ fontFamily: "heading" }}>
-              EduQuest
-            </h1>
-          </div>
-
-          <nav className="flex items-center gap-6 text-base" style={{ fontFamily: "regular" }}>
-            <a href="/courses">Learn</a>
-            <a href="/courses">Practice</a>
-            <a href="/courses">Build</a>
-            <a href="">Community</a>
-            <a href="">Pricing</a>
-          </nav>
-
-          <RetroButton text="Sign In" onClick={() => navigate("/")} />
-        </header>
+       <Navbar/>
 
         <img src="image/sparkle.png" alt="" className="w-20 h-10 absolute top-[30%] left-[65%]"/>
         <img src="image/sparkle.png" alt="" className="w-20 h-10 absolute top-[100%] left-[25%]"/>
