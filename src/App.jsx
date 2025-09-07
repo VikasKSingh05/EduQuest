@@ -1,20 +1,14 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
-import Landing from "./pages/landing";
-import Jungle from "./pages/Jungle/Jungle";
-import Zoo from "./pages/zoo/zoo";
+import ErrorBoundary from "./components/ErrorBoundary";
+import './App.css';
+import { RouterProvider } from "react-router-dom";
+import Router from "./Router";
 
-function App() {
-  return (
-    <Routes>
-      {/* Landing page (default at "/") */}
-      <Route path="/" element={<Landing />} />
-
-      {/* Standalone Jungle page */}
-      <Route path="/jungle" element={<Jungle />} />
-      <Route path="/zoo" element={<Zoo />} />
-    </Routes>
-  );
+function App(){
+    return (
+        <ErrorBoundary>
+            <RouterProvider router = {Router}/> 
+        </ErrorBoundary>
+    );
 }
-
 export default App;

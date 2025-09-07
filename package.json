@@ -1,5 +1,5 @@
 {
-  "name": "project1",
+  "name": "eduquest",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,8 +11,11 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.13",
+    "lucide-react": "^0.542.0",
+    "pixel-retroui": "^2.1.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-gridlines": "^1.1.7",
     "react-router-dom": "^7.8.2",
     "tailwindcss": "^4.1.13"
   },

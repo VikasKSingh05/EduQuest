@@ -66,14 +66,9 @@ function Navbar() {
         </div>
 
         {/* Sign Up button */}
-        <button
-          className="relative w-30 py-2 ml-5 bg-[#B4E50D] text-black font-bold text-sm
-                   border-b-4 border-2 border-[#78C841] rounded-sm shadow-lg
-                   hover:translate-y-0.5 active:translate-y-2 transition-all"
-        style={{fontFamily: 'button_text'}}
-        >
-          Sign up
-        </button>
+<button className="relative w-30 py-2 ml-5 bg-[#B4E50D] text-black font-bold text-sm border-b-4 border-2 border-[#78C841] rounded-sm shadow-lg hover:translate-y-0.5 active:translate-y-2 transition-all" style={{fontFamily: 'button_text'}} >
+  Sign up
+</button>
       </div>
     </div>
   );

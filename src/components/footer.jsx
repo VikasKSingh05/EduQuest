@@ -3,23 +3,22 @@ import React from "react";
 function Footer() {
   return (
     <footer className="footer sm:footer-horizontal bg-[#0F172A] text-base-content p-10 pl-50">
-      <nav>
+      <nav style={{fontFamily:'regular'}}>
         <h6 className="footer-title">Courses</h6>
         <a className="link link-hover" href="/jungle">
-          Jungle Science
+         Nature Detectives
         </a>
-        <a className="link link-hover">Food Good</a>
-        <a className="link link-hover">Life on Land</a>
-        <a className="link link-hover">Water Water</a>
+        <a className="link link-hover">Eco Heroes In Action</a>
+        <a className="link link-hover">Our Planet Our Home</a>
       </nav>
-      <nav>
+      <nav style={{fontFamily:'regular'}}>
         <h6 className="footer-title">Company</h6>
         <a className="link link-hover">About us</a>
         <a className="link link-hover">Contact</a>
         <a className="link link-hover">Jobs</a>
       </nav>
       <nav>
-        <h6 className="footer-title">Social</h6>
+        <h6 className="footer-title style={{fontFamily:'regular'}}">Social</h6>
         <div className="grid grid-flow-col gap-4">
           <a>
             <svg
