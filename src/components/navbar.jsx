@@ -4,7 +4,7 @@ function Navbar() {
   return (
     <div className="navbar bg-[#020617] shadow-sm md:px-50 border-b-1 border-slate-600 ">
       {/* Logo */}
-      <img src="/image/coin.png" alt="" className="h-10 w-10 mr-5" />
+      <img src="/forest.svg" alt="" className="h-10 w-10 mr-5" />
       {/*title */}
       <div className="flex-1">
         <a href="/" className="text-[30px] " style={{ fontFamily: "heading" }}>

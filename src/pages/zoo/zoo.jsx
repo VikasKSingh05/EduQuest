@@ -4,13 +4,15 @@ import Footer from "../../components/footer";
 import Hero from "./components/hero";
 import Game from "./components/game";
 import Quiz from "../../components/quiz";
+import questions from "./questions";
+
 function Zoo() {
   return (
     <div>
       <Navbar></Navbar>
       <Hero />
       <Game />
-      <Quiz />
+      <Quiz ques={questions} />
       <Footer></Footer>
     </div>
   );

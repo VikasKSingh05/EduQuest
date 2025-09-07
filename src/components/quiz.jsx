@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import Profile from "./profile";
 import Score from "./score";
 import Cards from "./cards";
-import questions from "../pages/Jungle/questions";
 
-function Quiz() {
+function Quiz({ques}) {
+  const questions = ques;
   const [score, setScore] = useState(0);
 
   return (
