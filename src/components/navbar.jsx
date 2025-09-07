@@ -1,5 +1,4 @@
 import React from "react";
-import RetroButton from "./RetroButton";
 
 function Navbar() {
   return (
@@ -45,16 +44,33 @@ function Navbar() {
             </button>
           </div>
 
-          <nav className="flex items-center gap-6 text-base" style={{ fontFamily: "regular" }}>
-            <a href="/courses">Learn</a>
-            <a href="/courses">Practice</a>
-            <a href="/courses">Build</a>
-            <a href="">Community</a>
-            <a href="">Pricing</a>
-          </nav>
+          {/* Mobile dropdown button: visible on small screens, hidden on medium+ */}
+          <div className="md:hidden">
+            <div className="dropdown dropdown-end">
+              <div tabIndex={0} role="button" className="btn btn-ghost">
+                Menu
+              </div>
+              <ul
+                tabIndex={0}
+                className="dropdown-content menu bg-base-100 box z-1 w-52 p-2 shadow-sm"
+              >
+                <li>
+                  <a>Leaderboard</a>
+                </li>
+                <li>
+                  <a>Courses</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-          <RetroButton text="Sign In" onClick={() => navigate("/")} />
-        </header>
+        {/* Sign Up button */}
+<button className="relative w-30 py-2 ml-5 bg-[#B4E50D] text-black font-bold text-sm border-b-4 border-2 border-[#78C841] rounded-sm shadow-lg hover:translate-y-0.5 active:translate-y-2 transition-all" style={{fontFamily: 'button_text'}} >
+  Sign up
+</button>
+      </div>
+    </div>
   );
 }
 export default Navbar;

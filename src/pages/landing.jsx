@@ -1,7 +1,7 @@
 import React from "react";
 import Gridlines from "react-gridlines";
 import { useNavigate } from "react-router-dom";
-import Navbar from '../components/navbar'
+import LandingNav from '../components/LandingNav'
 import "../App.css";
 
 // Retro components 
@@ -25,7 +25,7 @@ export default function Landing() {
       />
 
       <div className="relative z-10">
-       <Navbar/>
+       <LandingNav/>
 
         <img src="image/sparkle.png" alt="" className="w-20 h-10 absolute top-[30%] left-[65%]"/>
         <img src="image/sparkle.png" alt="" className="w-20 h-10 absolute top-[100%] left-[25%]"/>
