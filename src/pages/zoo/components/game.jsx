@@ -4,6 +4,7 @@ function Game() {
   return (
     <div className="flex h-200 py-15 px-5 gap-5 bg-[#020617]">
       <div className="flex-1 flex flex-col justify-center gap-8 mx-40">
+          <p style={{fontFamily: "heading"}} className="text-3xl font-bold" >Learn by playing</p>
         <div>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita facere dolor ea quae, nulla adipisci hic omnis reprehenderit voluptatum amet.</p>
         </div>
