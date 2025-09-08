@@ -1,7 +1,7 @@
 import React from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 import Home from './pages/Home'
-import Courses from './pages/Courses'
+import AllCourses from './pages/Courses'
 import ErrorPage from './components/ErrorPage'
 import Jungle from './pages/Jungle/Jungle'
 import Zoo from './pages/zoo/zoo'
@@ -14,7 +14,7 @@ const Router = createBrowserRouter([
     },
     {
         path: "/courses",
-        element:<Courses/>,
+        element:<AllCourses/>,
         errorElement:<ErrorPage/>
     },
     {
