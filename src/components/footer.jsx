@@ -12,7 +12,7 @@ function Footer() {
 
     <div style={{fontFamily:'heading'}} className="text-4xl">EDUQUEST</div>
   <nav style={{ fontFamily: "regular" }} className="flex flex-col">
-    <a className="link link-hover">About us</a>
+    <a className="link link-hover" href="#desc">About</a>
     <a className="link link-hover">Contact</a>
   </nav>
 </footer>

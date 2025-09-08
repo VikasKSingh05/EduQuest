@@ -54,11 +54,11 @@ export default function Landing() {
           <div className="text-2xl max-w-2xl" style={{ fontFamily: "button_text" }}>
             Gamify your environmental learning journey with interactive lessons, projects, and a vibrant community.
           </div>
-          <RetroButton text="Get Started" style={{ fontFamily: "button_text" }} onClick={() => navigate("/courses")} />
+          <RetroButton text="Get Started" style={{ fontFamily: "button_text" }} onClick={() => navigate("/intro")} />
         </div>
       </div>
 
-        <div className="pointer-events-auto absolute top-[20%] transform rotate-15 -left-10" >
+        <div className="pointer-events-auto absolute top-[20%] transform rotate-15 -left-10 " >
           <RetroBubble dir='left' desc='I am so obsessed with this platform '/>
         </div>
         <div className="pointer-events-auto absolute top-[30%] transform -rotate-10  left-10" >
