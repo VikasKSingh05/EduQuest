@@ -24,12 +24,12 @@ const Courses = () => {
       {/* Page content */}
       <div className="relative z-10">
         <p
-          className="font-bold text-3xl text-center pt-[150px]"
+          className="font-bold text-3xl text-center pt-[150px] text-white"
           style={{ fontFamily: "heading" }}
         >
           Journey Through The World Of Environment
         </p>
-
+  
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-15 mt-12">
           {CourseItems.map((course, index) => (
             <div
