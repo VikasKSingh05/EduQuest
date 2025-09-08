@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "heading";
+  src: url("/fonts/pixelgrid-squareboldm.woff") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "button_text";
+  src: url("/fonts/pixelgrid-squareboldm.woff") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "regular";
+  src: url("/fonts/Hack-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+body{
+    font-family: 'regular';
+}
