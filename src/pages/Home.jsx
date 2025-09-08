@@ -1,5 +1,5 @@
 import React from "react";
-import Landing from "./Landing";
+import Landing from "./landing";
 import Courses from "./Courses";
 import Description from "./Description";
 import Feedback from "./Feedback";

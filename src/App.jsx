@@ -3,6 +3,8 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import './App.css';
 import { RouterProvider } from "react-router-dom";
 import Router from "./Router";
+import "/pixel-retroui-setup.js";
+
 
 function App(){
     return (

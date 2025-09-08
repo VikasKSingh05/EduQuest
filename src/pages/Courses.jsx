@@ -4,13 +4,11 @@ import RetroCards from "../components/RetroCards";
 import CourseItems from "../components/CourseItems";
 import Gridlines from "react-gridlines";
 import RetroButton from "../components/RetroButton";
-import Jungle from "./Jungle/Jungle";
-import Zoo from "./zoo/zoo"
 const Courses = () => {
   const navigate = useNavigate();
 
   const handleCourseClick = (link) => {
-    navigate(link); 
+    window.location.href = link;
   };
 
   return (
@@ -39,12 +37,16 @@ const Courses = () => {
               onClick={() => handleCourseClick(course.link)}
               className="cursor-pointer"
             >
-              <RetroCards title={course.title} desc={course.description} source={course.image} />
-            </div>
+                <RetroCards
+                  title={course.title}
+                  desc={course.description}
+                  source={course.image}
+                />
+             </div>
           ))}
         </div>
         <div className="flex items-center justify-center pb-[150px]">
-          <RetroButton text={'Explore All Courses'}/>
+          <RetroButton text={"Explore All Courses"} />
         </div>
       </div>
     </div>

@@ -14,7 +14,6 @@ function LandingNav() {
           <nav className="flex items-center gap-6 text-base" style={{ fontFamily: "regular" }}>
             <a href="/courses">Learn</a>
             <a href="/courses">Practice</a>
-            <a href="/courses">Build</a>
             <a href="">Community</a>
             <a href="">Pricing</a>
           </nav>
