@@ -3,7 +3,7 @@ import Gridlines from 'react-gridlines';
 
 const Description = () => {
   return (
-    <div className="relative bg-slate-900 min-h-screen overflow-hidden">
+    <div id="desc" className="relative bg-slate-900 min-h-screen overflow-hidden">
       {/* Background gridlines */}
       <Gridlines
         cellWidth={25}

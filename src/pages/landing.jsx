@@ -33,11 +33,10 @@ export default function Landing() {
           </div>
 
           <nav className="flex items-center gap-6 text-base" style={{ fontFamily: "regular" }}>
-            <a href="/courses">Learn</a>
-            <a href="/courses">Practice</a>
-            <a href="/courses">Build</a>
+            <a href="https://edu-quest-iota.vercel.app/jungle">Learn</a>
+            <a href="https://edu-quest-iota.vercel.app/zoo">Practice</a>
             <a href="">Community</a>
-            <a href="">Pricing</a>
+            <a href="#desc">About</a>
           </nav>
 
           <RetroButton text="Sign In" onClick={() => navigate("/")} />
