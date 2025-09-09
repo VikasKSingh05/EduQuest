@@ -7,15 +7,15 @@ const CourseItems = [
   },
   {
     image: "/image/origbig3.png",
-    title: "Nature Detectives",
+    title: "Jungle Detectives",
     description: "Dive into the world of wildlife and ecosystems, learning to observe and understand nature around us.",
     link: "https://edu-quest-iota.vercel.app/jungle"
   },
   {
     image: "/image/origbig.png",
-    title: "Eco Heroes in Action",
-    description: "Discover the impact of climate change and sustainability, and how to protect the environment.",
-    link: "https://edu-quest-iota.vercel.app/jungle"
+    title: "ZooTopia",
+    description: "Step into the wild and explore the fascinating world of animals, their habitats in a fun, interactive way.",
+    link: "https://edu-quest-iota.vercel.app/zoo"
   },
 ]
 
