@@ -27,7 +27,7 @@ export default function IntroVideo() {
       </video>
 
       {/* Overlay skip hint */}
-      <div className="absolute bottom-5 right-5 text-white text-lg bg-black/50 px-4 py-2 rounded-lg" style={{fontFamily:'heading'}}>
+      <div className="absolute bottom-30 right-10 text-white text-lg bg-black/50 px-4 py-2 rounded-lg" style={{fontFamily:'heading'}}>
         Press <strong>S</strong> to skip
       </div>
     </div>
