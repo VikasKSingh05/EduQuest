@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Courses from './pages/Courses'
 import ErrorPage from './components/ErrorPage'
 import IntroVideo from './pages/IntroVideo'
+import AllCourses from './pages/AllCourses'
 
 const Router = createBrowserRouter([
     {
@@ -20,6 +21,12 @@ const Router = createBrowserRouter([
         path: "/intro",
         element:<IntroVideo/>,
         errorElement:<ErrorPage/>
+    },
+    {
+        path: "all-courses",
+        element:<AllCourses/>,
+        errorElement:<ErrorPage/>
     }
+
 ]);
 export default Router;
