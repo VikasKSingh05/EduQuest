@@ -86,7 +86,7 @@ const AllCourses = () => {
             </div>
             
             {/* Search Bar */}
-            <div className="absolute left-[70%] -top-[12px]">
+            <div className="absolute left-[70%] -top-[12.4px]">
               <SearchBar 
                 courses={CourseItems} 
                 setSearchTerm={setSearchTerm}
@@ -125,7 +125,7 @@ const AllCourses = () => {
                   <a
                     href={course.link}
                     target="_blank"
-                    className="bg-pink-300 hover:bg-blue-700 text-white font-pixel px-4 py-2 rounded mt-2 inline-block"
+                    className="bg-pink-300 hover:bg-pink-600 text-white font-pixel px-4 py-2 rounded mt-2 inline-block"
                     style={{ fontFamily: "button_text" }}
                   >
                     Start Quest
