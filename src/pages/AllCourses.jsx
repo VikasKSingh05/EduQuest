@@ -20,7 +20,7 @@ const CourseItems = [
     title: "Jungle Detectives",
     description: "Dive into the world of wildlife and ecosystems, learning to observe and understand nature around us.",
     link: "https://edu-quest-iota.vercel.app/jungle",
-    tags: ['Beginner', 'Animals'],
+    tags: ['Intermediate', 'Animals'],
     category: 'Animals',
   },
   {
@@ -74,7 +74,13 @@ const AllCourses = () => {
   return (
     <div>
       <Header />
-      <div className="min-h-screen relative z-10 flex flex-col items-center bg-black">
+      <div className="min-h-screen relative z-10 flex flex-col items-center bg-black" 
+        style={{
+          backgroundImage: `url('/image/banner3.gif')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      >
 
         <div className="mt-10 w-full max-w-5xl relative"> 
           {/* Header and Search Container */}
@@ -84,8 +90,7 @@ const AllCourses = () => {
                 Explore All Quests
               </h1>
             </div>
-            
-            {/* Search Bar */}
+        
             <div className="absolute left-[70%] -top-[12.4px]">
               <SearchBar 
                 courses={CourseItems} 
@@ -112,7 +117,7 @@ const AllCourses = () => {
           </div>
 
           {/* Course Grid with RetroCards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-6 mb-30 px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 mb-30 px-4">
             {filteredCourses.map(course => (
               <RetroCards
                 key={course.id}
@@ -124,7 +129,6 @@ const AllCourses = () => {
                 {course.link && (
                   <a
                     href={course.link}
-                    target="_blank"
                     className="bg-pink-300 hover:bg-pink-600 text-white font-pixel px-4 py-2 rounded mt-2 inline-block"
                     style={{ fontFamily: "button_text" }}
                   >
@@ -137,9 +141,8 @@ const AllCourses = () => {
         </div>  
 
         {/* Sparkles */}
-        <div className="absolute top-1/4 left-1/4 animate-pulse text-yellow-300 text-3xl">✨</div>
-        <div className="absolute top-1/2 right-1/4 animate-pulse text-yellow-300 text-3xl">✨</div>
-        <div className="absolute bottom-1/4 left-3/4 animate-pulse text-yellow-300 text-3xl">✨</div>
+        <div className="absolute top-[10%] left-[10%] animate-pulse text-yellow-300 text-3xl">✨</div>
+        <div className="absolute top-[10%] right-[10%] animate-pulse text-yellow-300 text-3xl">✨</div>
       </div>
     </div>
   );

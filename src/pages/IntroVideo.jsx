@@ -8,7 +8,7 @@ export default function IntroVideo() {
   useEffect(() => {
     const handleKeyPress = (e) => {
       if (e.key.toLowerCase() === "s") {
-        navigate("/courses");
+        navigate("/all-courses");
       }
     };
     window.addEventListener("keydown", handleKeyPress);
@@ -20,7 +20,7 @@ export default function IntroVideo() {
       <video
         autoPlay
         className="w-full h-full object-cover"
-        onEnded={() => navigate("/courses")}
+        onEnded={() => navigate("/all-courses")}
       >
         <source src="/image/intro.mp4" type="video/mp4" />
         Your browser does not support the video tag.
