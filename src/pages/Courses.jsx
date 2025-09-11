@@ -46,7 +46,7 @@ const Courses = () => {
           ))}
         </div>
         <div className="flex items-center justify-center pb-[150px]">
-          <RetroButton text={"Explore All Courses"} />
+          <RetroButton text={"Explore All Courses"} onClick={()=>{navigate('/all-courses')}}/>
         </div>
       </div>
     </div>

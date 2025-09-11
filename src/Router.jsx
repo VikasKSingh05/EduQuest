@@ -5,6 +5,7 @@ import Courses from './pages/Courses'
 import ErrorPage from './components/ErrorPage'
 import IntroVideo from './pages/IntroVideo'
 import AllCourses from './pages/AllCourses'
+import ScrollToTop from './components/ScrollToTop'
 
 const Router = createBrowserRouter([
     {
@@ -24,7 +25,11 @@ const Router = createBrowserRouter([
     },
     {
         path: "all-courses",
-        element:<AllCourses/>,
+        element:(<>
+        <ScrollToTop/>
+        <AllCourses/>
+        </>
+    ),
         errorElement:<ErrorPage/>
     }
 
