@@ -6,6 +6,7 @@ import ErrorPage from './components/ErrorPage'
 import IntroVideo from './pages/IntroVideo'
 import AllCourses from './pages/AllCourses'
 import ScrollToTop from './components/ScrollToTop'
+import Zoo from './pages/zoo/zoo'
 
 const Router = createBrowserRouter([
     {
@@ -31,7 +32,6 @@ const Router = createBrowserRouter([
         </>
     ),
         errorElement:<ErrorPage/>
-    }
-
+    },
 ]);
 export default Router;
