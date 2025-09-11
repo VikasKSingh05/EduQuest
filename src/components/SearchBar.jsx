@@ -30,7 +30,7 @@ function SearchBar({ courses, setSearchTerm }) {
       </div>
 
       {query && (
-        <ul className="mt-2 max-h-40 overflow-auto bg-[#12122b] rounded-md shadow-md absolute w-full z-10">
+        <ul className="mt-2 max-h-40 overflow-auto bg-[#12122b] rounded-md shadow-md absolute z-10">
           {filteredCourses.length > 0 ? (
             filteredCourses.map((course) => (
               <li

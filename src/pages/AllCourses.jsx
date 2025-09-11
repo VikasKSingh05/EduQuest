@@ -1,4 +1,3 @@
-// src/pages/AllCoursesPage.jsx
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import SearchBar from '../components/SearchBar';
@@ -74,32 +73,31 @@ const AllCourses = () => {
   return (
     <div>
       <Header />
-      <div className="min-h-screen relative z-10 flex flex-col items-center bg-black" 
-        style={{
-          backgroundImage: `url('/image/banner3.gif')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        }}
+      
+      {/* Banner with overlay content */}
+      <div 
+        className="relative w-full h-[20rem] bg-cover bg-center"
+        style={{ backgroundImage: `url('/image/banner3.gif')` }}
       >
-
-        <div className="mt-10 w-full max-w-5xl relative"> 
-          {/* Header and Search Container */}
-          <div className="flex items-center justify-between gap-4">
-            <div className="bg-yellow-400 border-4 border-yellow-600 rounded-lg p-3 mb-2 text-center shadow-lg flex-1">
-              <h1 className="text-4xl uppercase" style={{ fontFamily: "heading" }}>
-                Explore All Quests
-              </h1>
-            </div>
-        
-            <div className="absolute left-[70%] -top-[12.4px]">
-              <SearchBar 
-                courses={CourseItems} 
-                setSearchTerm={setSearchTerm}
-              />
-            </div>
+        {/* Overlay content (title + search bar) */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center z-20 px-4">
+          <div className="bg-yellow-400 border-4 border-yellow-600 rounded-lg p-4 shadow-lg mb-4">
+            <h1 className="text-4xl uppercase text-center" style={{ fontFamily: "heading" }}>
+              Explore All Quests
+            </h1>
           </div>
 
-         {/* Filter Buttons */}
+          <SearchBar    
+            courses={CourseItems} 
+            setSearchTerm={setSearchTerm}
+          />
+        </div>
+      </div>
+
+      {/* Rest of the content */}
+      <div className="min-h-screen relative z-10 flex flex-col items-center bg-[#01091b]">
+        <div className="mt-10 w-full max-w-5xl relative"> 
+          {/* Filter Buttons */}
           <div className="flex flex-wrap justify-center gap-2 mb-4 text-white" style={{ fontFamily: 'regular' }}>
             {categories.map(category => (
               <button
