@@ -1,56 +1,7 @@
 @import "tailwindcss";
 @import 'pixel-retroui/dist/index.css';
 
-/* Basic custom styles for pixelated appearance */
-.pixelated-image {
-  image-rendering: pixelated;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: -webkit-crisp-edges;
-}
 
-/* Optional: Add some slight inset shadow for "screen" effect */
-.screen-inset {
-  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.7);
-}
-
-/* Optional: Subtle animation for interactive elements */
-@keyframes flicker {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.8; }
-}
-
-.marquee-font {
-    font-family: 'Press Start 2P', cursive;
-    text-shadow: 1px 1px 0px rgba(0,0,0,0.5); /* Pixelated shadow */
-}
-
-.marquee-banner {
-    box-shadow: 4px 4px 0px rgba(0,0,0,0.7); /* Stronger pixelated shadow for banner */
-    transform: skewX(-5deg); /* Slight skew for arcade feel */
-}
-.marquee-banner h1 {
-    text-shadow: 2px 2px 0px rgba(0,0,0,0.8);
-}
-
-/* Add pixelated button/tag effects if desired */
-.pixelated-tag {
-    text-shadow: 1px 1px 0px rgba(0,0,0,0.5);
-    border: 1px solid rgba(0,0,0,0.3);
-}
-
-.start-button-effect {
-    text-shadow: 1px 1px 0px rgba(0,0,0,0.5);
-    border: 2px solid rgba(0,0,0,0.7);
-    box-shadow: 2px 2px 0px rgba(0,0,0,0.7);
-    transition: all 0.1s ease-in-out;
-}
-
-.start-button-effect:hover {
-    box-shadow: 4px 4px 0px rgba(0,0,0,0.8);
-    transform: translate(-2px, -2px);
-}
-
-/* Basic animation for the sparkles */
 @keyframes pulse {
     0%, 100% { opacity: 1; transform: scale(1); }
     50% { opacity: 0.7; transform: scale(1.1); }
@@ -60,13 +11,3 @@
     animation: pulse 2s infinite ease-in-out;
 }
 
-/* Example for arcade cabinet effect (optional, could be more complex) */
-.arcade-cabinet-effect {
-    box-shadow: 6px 6px 0px rgba(0,0,0,0.8); /* Deeper shadow for 3D effect */
-    transition: transform 0.1s ease-in-out;
-}
-
-.arcade-cabinet-effect:hover {
-    transform: translateY(-5px); /* Lift slightly on hover */
-    box-shadow: 8px 8px 0px rgba(0,0,0,0.9);
-}
