@@ -1,18 +1,16 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 function SearchBar({ courses, setSearchTerm }) {
   const [query, setQuery] = useState("");
-  const navigate = useNavigate();
 
   const filteredCourses = courses.filter((course) =>
     course.title.toLowerCase().includes(query.toLowerCase())
   );
 
-  const handleClick = (path, title) => {
-    navigate(path); 
+  const handleClick = (url, title) => {
+    window.location.href = url; // Changed from navigate to window.location.href
     setQuery("");
-    setSearchTerm(title); 
+    setSearchTerm(title);
   };
 
   return (
