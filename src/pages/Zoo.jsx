@@ -71,7 +71,7 @@ const Zoo = () => {
         </div>
       </div>
       <div id="quiz" className="flex flex-col md:flex-row px-50 py-15 bg-[#020617] gap-5">
-        <div className="flex-3 border-4 border-[#14ADFF] rounded-2xl p-8 bg-[#12122b] shadow-xl mx-auto max-w-5xl">
+        <div className="flex-3 !border-2 !border-[#68696a] rounded-2xl p-8 bg-[#12122b] shadow-xl mx-auto max-w-5xl">
           {ZooQuestions.map((questionData, index) => (
             <div key={questionData.id || index} className="mb-8 last:mb-0">
               <QuestionCard

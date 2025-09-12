@@ -25,7 +25,7 @@ const Router = createBrowserRouter([
         errorElement:<ErrorPage/>
     },
     {
-        path: "all-courses",
+        path: "/all-courses",
         element:(<>
         <ScrollToTop/>
         <AllCourses/>
@@ -34,7 +34,7 @@ const Router = createBrowserRouter([
         errorElement:<ErrorPage/>
     },
     {
-        path: "zoo",
+        path: "/zoo",
         element: <Zoo/>,
         errorElement:<ErrorPage/>
     }

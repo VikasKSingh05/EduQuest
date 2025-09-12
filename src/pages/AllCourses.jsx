@@ -28,7 +28,7 @@ const CourseItems = [
     image: "/image/origbig3.png",
     title: "ZooTopia",
     description: "Step into the wild and explore the fascinating world of animals, their habitats in a fun, interactive way.",
-    link: "https://edu-quest-iota.vercel.app/zoo",
+    link: "/zoo",
     tags: ['Beginner', 'Animals'],
     category: 'Animals',
   },
@@ -50,6 +50,15 @@ const CourseItems = [
     tags: ['Advanced', 'Conservation'],
     category: 'Conservation',
   },
+  {
+    id:6,
+    title: 'Plastic Pirates',
+    image: '/image/origbig6.png', 
+    description: 'Join the fight against plastic pollution and discover ways to reduce waste.',
+    link: "https://edu-quest-iota.vercel.app/plastic",
+    tags: ['Intermediate', 'Pollution'],
+    category: 'Pollution',
+  }
 ];
 
 const categories = ['All', 'Beginner', 'Intermediate', 'Advanced'];

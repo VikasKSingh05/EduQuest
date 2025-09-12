@@ -36,7 +36,7 @@ const QuestionCard = ({ question, options, correctAnswer, onAnswer, questionNumb
       <div className="flex items-center text-white text-2xl font-bold mb-4">
         {/* Bubble with number */}
         <div
-          className="h-12 w-12 border-2 border-[#14ADFF] bg-[#0B1E39] rounded-full flex items-center justify-center shadow-md text-lg m-6"
+          className="h-12 w-12 !border-2 !border-[#f8f9fa] bg-[#33598e] rounded-full flex items-center justify-center shadow-md text-lg m-6"
           style={{ fontFamily: "heading" }}
         >
           {questionNumber}
