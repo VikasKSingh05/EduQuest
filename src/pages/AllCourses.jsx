@@ -83,7 +83,7 @@ const AllCourses = () => {
         <div className="absolute inset-0 flex flex-col items-center justify-center z-20 px-4">
           <div className="bg-yellow-400 border-4 border-yellow-600 rounded-lg p-4 shadow-lg mb-4">
             <h1 className="text-4xl uppercase text-center" style={{ fontFamily: "heading" }}>
-              Explore All Quests
+              Explore The World Of EduQuest
             </h1>
           </div>
 
