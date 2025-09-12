@@ -2,6 +2,7 @@ import React from "react";
 import Gridlines from "react-gridlines";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
+import './courses.css';
 
 // Retro components 
 import RetroButton from "../components/RetroButton";
