@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Header from '../components/Header';
 import SearchBar from '../components/SearchBar';
 import RetroCards from '../components/RetroCards'; 
+import Gridlines from 'react-gridlines';
 
 const CourseItems = [
   {
@@ -73,13 +74,12 @@ const AllCourses = () => {
   return (
     <div>
       <Header />
-      
+
       {/* Banner with overlay content */}
       <div 
         className="relative w-full h-[20rem] bg-cover bg-center"
         style={{ backgroundImage: `url('/image/banner3.gif')` }}
       >
-        {/* Overlay content (title + search bar) */}
         <div className="absolute inset-0 flex flex-col items-center justify-center z-20 px-4">
           <div className="bg-yellow-400 border-4 border-yellow-600 rounded-lg p-4 shadow-lg mb-4">
             <h1 className="text-4xl uppercase text-center" style={{ fontFamily: "heading" }}>
@@ -94,9 +94,18 @@ const AllCourses = () => {
         </div>
       </div>
 
-      {/* Rest of the content */}
-      <div className="min-h-screen relative z-10 flex flex-col items-center bg-[#01091b]">
-        <div className="mt-10 w-full max-w-5xl relative"> 
+      {/* Courses Section with Gridlines */}
+      <div className="min-h-screen relative flex flex-col items-center bg-[#01091b]">
+        
+        {/* Gridlines visible only here */}
+        <Gridlines
+          cellWidth={25}
+          cellHeight={30}
+          lineColor="rgba(255,255,255,0.08)"
+          className="absolute inset-0 pointer-events-none z-10"
+        />
+
+        <div className="mt-10 w-full max-w-5xl relative z-20"> 
           {/* Filter Buttons */}
           <div className="flex flex-wrap justify-center gap-2 mb-4 text-white" style={{ fontFamily: 'regular' }}>
             {categories.map(category => (
@@ -114,7 +123,7 @@ const AllCourses = () => {
             ))}
           </div>
 
-          {/* Course Grid with RetroCards */}
+          {/* Course Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 mb-30 px-4">
             {filteredCourses.map(course => (
               <RetroCards
