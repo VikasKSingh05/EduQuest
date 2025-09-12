@@ -9,7 +9,7 @@ const CourseItems = [
     image: "/image/origbig2.png",
     title: "Jungle Detectives",
     description: "Dive into the world of wildlife and ecosystems, learning to observe and understand nature around us.",
-    link: "https://edu-quest-iota.vercel.app/jungle"
+    link: "/courses/jungle"
   },
   {
     image: "/image/origbig3.png",

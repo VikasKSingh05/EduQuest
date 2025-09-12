@@ -8,6 +8,8 @@ import AllCourses from './pages/AllCourses'
 import ScrollToTop from './components/ScrollToTop'
 import Zoo from './pages/Zoo'
 import Jungle from './pages/Jungle'
+import SignInPage from './pages/SignInPage'
+import SignUpPage from './pages/SignUpPage'
 
 const Router = createBrowserRouter([
     {
@@ -43,6 +45,16 @@ const Router = createBrowserRouter([
         path: "/courses/jungle",
         element: <Jungle/>,
         errorElement:<ErrorPage/>
-    }
+    },
+     {
+    path: "/sign-in/*",
+    element: <SignInPage />,
+    errorElement: <ErrorPage />,
+    },
+    {
+    path: "/sign-up/*",
+    element: <SignUpPage />,
+    errorElement: <ErrorPage />,
+    },
 ]);
 export default Router;
