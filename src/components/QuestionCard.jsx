@@ -31,17 +31,24 @@ const QuestionCard = ({ question, options, correctAnswer, onAnswer, questionNumb
   };
 
   return (
-    <div className="bg-[#12122b] p-6">
+    <div className="bg-[#12122b] p-6 rounded-lg shadow-lg">
+      {/* Question number + text */}
       <div className="flex items-center text-white text-2xl font-bold mb-4">
-        <div className="h-12 w-12 border-3 border-[#14ADFF] rounded-full flex items-center justify-center mr-4" 
-             style={{ fontFamily: "heading" }}>
+        {/* Bubble with number */}
+        <div
+          className="h-12 w-12 border-2 border-[#14ADFF] bg-[#0B1E39] rounded-full flex items-center justify-center shadow-md text-lg m-6"
+          style={{ fontFamily: "heading" }}
+        >
           {questionNumber}
         </div>
+
+        {/* Question text */}
         <p className="ml-4" style={{ fontFamily: "regular" }}>
           {question}
         </p>
       </div>
 
+      {/* Answer options */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mx-20">
         {options.map((option, index) => (
           <RetroButton
