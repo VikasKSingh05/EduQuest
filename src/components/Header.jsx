@@ -7,7 +7,7 @@ const Header = () => {
   return (
         <header className="text-white text-center bg-black flex items-center justify-between px-8 py-3 font-extrabold">
         <Link to="/" className="flex items-center">
-        <img src="forest.svg" alt="logo" className="w-10 h-10" />
+        <img src="/forest.svg" alt="logo" className="w-10 h-10" />
         <h1 className="text-lg font-bold pl-4" style={{ fontFamily: "heading" }}>
           EduQuest
         </h1>

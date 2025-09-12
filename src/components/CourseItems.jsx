@@ -15,7 +15,7 @@ const CourseItems = [
     image: "/image/origbig3.png",
     title: "ZooTopia",
     description: "Step into the wild and explore the fascinating world of animals, their habitats in a fun, interactive way.",
-    link: "/zoo"
+    link: "/courses/zoo"
   },
 ]
 

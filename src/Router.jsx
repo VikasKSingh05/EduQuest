@@ -7,6 +7,7 @@ import IntroVideo from './pages/IntroVideo'
 import AllCourses from './pages/AllCourses'
 import ScrollToTop from './components/ScrollToTop'
 import Zoo from './pages/Zoo'
+import Jungle from './pages/Jungle'
 
 const Router = createBrowserRouter([
     {
@@ -34,8 +35,13 @@ const Router = createBrowserRouter([
         errorElement:<ErrorPage/>
     },
     {
-        path: "/zoo",
+        path: "/courses/zoo",
         element: <Zoo/>,
+        errorElement:<ErrorPage/>
+    },
+    {
+        path: "/courses/jungle",
+        element: <Jungle/>,
         errorElement:<ErrorPage/>
     }
 ]);
