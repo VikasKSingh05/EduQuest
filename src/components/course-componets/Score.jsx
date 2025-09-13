@@ -1,7 +1,7 @@
 import React from "react";
 
-function Score({ score }) {
-  const value = score * 10;
+function Score({ score, total = 10 }) {
+  const value = (score / total) * 100;
 
   return (
     <div className="score-container">
@@ -9,7 +9,7 @@ function Score({ score }) {
 
       <div className="score-row">
         <img src="/image/star.png" alt="star" className="star-icon" />
-        <p className="score-text">{score}/10</p>
+        <p className="score-text">{score}/{total}</p>
       </div>
 
       <div className="progress-container">

@@ -58,25 +58,12 @@ export const useQuizScore = () => {
   };
 
   const calculatePoints = (quizType, score, totalQuestions) => {
-    const basePoints = {
-      'zoo': 50,
-      'jungle': 75,
-      'recycling': 30,
-      'water': 25,
-      'climate': 60,
-      'sustainable': 45,
-      'energy': 100,
-      'policy': 80,
-      'economics': 90
-    };
-
-    const base = basePoints[quizType] || 50;
+    // Each course gives 10 points total
+    const basePoints = 10;
     const accuracy = score / totalQuestions;
     
-    // Bonus points for perfect score
-    const perfectBonus = accuracy === 1 ? base * 0.2 : 0;
-    
-    return Math.round(base * accuracy + perfectBonus);
+    // Calculate points based on accuracy (0-10 points)
+    return Math.round(basePoints * accuracy);
   };
 
   return {

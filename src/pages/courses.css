@@ -666,3 +666,36 @@
 .profile-button:active {
   transform: translateY(4px);
 }
+
+/* Quiz completion styles */
+.quiz-completion {
+  background: #020617;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.completion-message {
+  text-align: center;
+  color: white;
+  font-family: "heading", sans-serif;
+  padding: 2rem;
+  border: 2px solid #475569;
+  border-radius: 1rem;
+  background: #12122b;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.completion-message h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #b4e50d;
+}
+
+.completion-message p {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #14adff;
+}

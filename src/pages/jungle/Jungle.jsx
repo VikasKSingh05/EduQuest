@@ -5,6 +5,7 @@ import Quiz from "../../components/course-componets/Quiz";
 import Footer from "../../components/footer";
 import Video from "./components/Video";
 import JungleQuestions from "./JungleQuestions";
+import "../courses.css";
 
 
 function Jungle(){
@@ -13,7 +14,7 @@ function Jungle(){
             <Navbar />
             <Hero />
             <Video />
-            <Quiz ques = {JungleQuestions} />
+            <Quiz ques={JungleQuestions} quizType="jungle" />
             <Footer />
         </div>
         

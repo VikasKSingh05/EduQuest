@@ -42,12 +42,12 @@ const Router = createBrowserRouter([
     },
     {
         path: "/courses/zoo",
-        element: <Zoo/>,
+        element: <ProtectedRoute><Zoo/></ProtectedRoute>,
         errorElement:<ErrorPage/>
     },
     {
         path: "/courses/jungle",
-        element: <Jungle/>,
+        element: <ProtectedRoute><Jungle/></ProtectedRoute>,
         errorElement:<ErrorPage/>
     },
      {

@@ -15,7 +15,11 @@ const root = document.getElementById("root");
 
 createRoot(root).render(
   <StrictMode>
-    <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+    <ClerkProvider 
+      publishableKey={PUBLISHABLE_KEY}
+      signInFallbackRedirectUrl="/dashboard"
+      signUpFallbackRedirectUrl="/select-age"
+    >
       <App />
     </ClerkProvider>
   </StrictMode>

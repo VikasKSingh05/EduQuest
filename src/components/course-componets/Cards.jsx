@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Cards({ id, question, options, correct, setScore }) {
+function Cards({ id, question, options, correct, onAnswer }) {
   const [answered, setAnswered] = useState(false);
   const [userAnswer, setUserAnswer] = useState(null);
 
@@ -8,9 +8,7 @@ function Cards({ id, question, options, correct, setScore }) {
     if (!answered) {
       setAnswered(true);
       setUserAnswer(index);
-      if (index === correct) {
-        setScore((prev) => prev + 1);
-      }
+      onAnswer(index === correct);
     }
   }
 
