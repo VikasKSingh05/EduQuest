@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../../components/course-componets/Navbar";
+import Header from "../../components/Header";
 import Hero from "./components/hero";
 import Quiz from "../../components/course-componets/Quiz";
 import Footer from "../../components/footer";
@@ -11,7 +11,7 @@ import "../courses.css";
 function Jungle(){
     return (
         <div>
-            <Navbar />
+            <Header />
             <Hero />
             <Video />
             <Quiz ques={JungleQuestions} quizType="jungle" />

@@ -26,7 +26,7 @@ const Header = () => {
         className="flex items-center gap-6 text-base"
         style={{ fontFamily: "regular" }}
       >
-        <Link to="/courses">Learn</Link>
+        <Link to="/all-courses">Learn</Link>
         <Link to="/all-courses">Practice</Link>
         <SignedIn>
           <Link to="/dashboard">Dashboard</Link>

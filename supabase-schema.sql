@@ -1,6 +1,3 @@
--- EduQuest Database Schema for Supabase
--- Run these commands in your Supabase SQL editor
-
 -- Enable Row Level Security
 ALTER TABLE IF EXISTS profiles ENABLE ROW LEVEL SECURITY;
 ALTER TABLE IF EXISTS quiz_attempts ENABLE ROW LEVEL SECURITY;
@@ -118,11 +115,3 @@ CREATE TRIGGER update_profiles_updated_at
   BEFORE UPDATE ON profiles
   FOR EACH ROW
   EXECUTE FUNCTION update_updated_at_column();
-
--- Sample data for testing (optional)
--- INSERT INTO profiles (id, name, points, age_category) VALUES
--- ('test-user-1', 'Alice Johnson', 150, 'teens'),
--- ('test-user-2', 'Bob Smith', 200, 'adults'),
--- ('test-user-3', 'Charlie Brown', 100, 'kids'),
--- ('test-user-4', 'Diana Prince', 300, 'adults'),
--- ('test-user-5', 'Eve Wilson', 75, 'teens');

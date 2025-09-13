@@ -8,7 +8,7 @@ const Courses = () => {
   const navigate = useNavigate();
 
   const handleCourseClick = (link) => {
-    window.location.href = link;
+    navigate(link);
   };
 
   return (

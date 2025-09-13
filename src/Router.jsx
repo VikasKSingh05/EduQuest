@@ -13,6 +13,7 @@ import SignUpPage from './pages/SignUpPage'
 import SelectAge from './pages/SelectAge'
 import Dashboard from './pages/Dashboard'
 import Leaderboard from './pages/Leaderboard'
+import ComingSoon from './pages/ComingSoon'
 import ProtectedRoute from './components/ProtectedRoute'
 
 const Router = createBrowserRouter([
@@ -73,6 +74,11 @@ const Router = createBrowserRouter([
     {
     path: "/leaderboard",
     element: <ProtectedRoute><Leaderboard /></ProtectedRoute>,
+    errorElement: <ErrorPage />,
+    },
+    {
+    path: "/courses/coming-soon",
+    element: <ProtectedRoute><ComingSoon /></ProtectedRoute>,
     errorElement: <ErrorPage />,
     },
 ]);

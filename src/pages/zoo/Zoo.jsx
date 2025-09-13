@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../../components/course-componets/Navbar";
+import Header from "../../components/Header";
 import Hero from "./components/hero";
 import Game from "./components/game";
 import Quiz from "../../components/course-componets/Quiz";
@@ -11,7 +11,7 @@ import "../courses.css";
 function Zoo(){
     return (
         <div>
-            <Navbar />
+            <Header />
             <Hero />
             <Game />
             <Quiz ques={ZooQuestions} quizType="zoo" />
