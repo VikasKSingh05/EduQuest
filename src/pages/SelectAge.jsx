@@ -90,12 +90,12 @@ const SelectAge = () => {
       <div className="relative z-10 flex items-center justify-center min-h-screen p-6">
         <div className="bg-[#12122b] border-2 border-[#68696a] rounded-2xl p-8 shadow-xl max-w-2xl w-full">
           <div className="text-center mb-8">
-            <h1 
+            <div 
               className="text-4xl font-bold text-white mb-4"
               style={{ fontFamily: "heading" }}
             >
               Welcome to EduQuest! 🎮
-            </h1>
+            </div>
             <p 
               className="text-lg text-white"
               style={{ fontFamily: "regular" }}
@@ -103,7 +103,7 @@ const SelectAge = () => {
               Let's personalize your learning journey
             </p>
             {user && (
-              <p className="text-sm text-gray-400 mt-2">
+              <p className="text-sm text-gray-400 mt-2" style={{ fontFamily: "regular" }}>
                 Welcome, {user.firstName || user.fullName || "User"}!
               </p>
             )}
@@ -138,7 +138,7 @@ const SelectAge = () => {
               >
                 Select Your Age Category
               </label>
-              <div className="space-y-3">
+              <div className="space-y-3" style={{ fontFamily: "regular" } }>
                 {ageCategories.map((category) => (
                   <div
                     key={category.value}
