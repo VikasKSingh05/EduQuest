@@ -19,17 +19,26 @@ import ProtectedRoute from './components/ProtectedRoute'
 const Router = createBrowserRouter([
     {
         path: "/",
-        element: <Home/>,
+        element: <>
+        <ScrollToTop/>
+        <Home/>
+        </>,
         errorElement: <ErrorPage/>
     },
     {
         path: "/courses",
-        element:<Courses/>,
+        element:<>
+        <ScrollToTop/>
+        <Courses/>
+        </>,
         errorElement:<ErrorPage/>
     },
     {
         path: "/intro",
-        element:<IntroVideo/>,
+        element:<>
+        <ScrollToTop/>
+        <IntroVideo/>
+        </>,
         errorElement:<ErrorPage/>
     },
     {
@@ -43,42 +52,66 @@ const Router = createBrowserRouter([
     },
     {
         path: "/courses/zoo",
-        element: <ProtectedRoute><Zoo/></ProtectedRoute>,
+        element: <>
+        <ScrollToTop/>
+        <ProtectedRoute><Zoo/></ProtectedRoute>
+        </>,
         errorElement:<ErrorPage/>
     },
     {
         path: "/courses/jungle",
-        element: <ProtectedRoute><Jungle/></ProtectedRoute>,
+        element: <>
+        <ScrollToTop/>
+        <ProtectedRoute><Jungle/></ProtectedRoute>
+        </>,
         errorElement:<ErrorPage/>
     },
      {
     path: "/sign-in/*",
-    element: <SignInPage />,
+    element: <>
+    <ScrollToTop/>
+    <SignInPage />
+    </>,
     errorElement: <ErrorPage />,
     },
     {
     path: "/sign-up/*",
-    element: <SignUpPage />,
+    element: <>
+    <ScrollToTop/>
+    <SignUpPage />
+    </>,
     errorElement: <ErrorPage />,
     },
     {
     path: "/select-age",
-    element: <ProtectedRoute><SelectAge /></ProtectedRoute>,
+    element: <>
+    <ScrollToTop/>
+    <ProtectedRoute><SelectAge /></ProtectedRoute>
+    </>,
     errorElement: <ErrorPage />,
     },
     {
     path: "/dashboard",
-    element: <ProtectedRoute><Dashboard /></ProtectedRoute>,
+    element: <>
+    <ScrollToTop/>
+    <ProtectedRoute><Dashboard /></ProtectedRoute>
+    </>,
     errorElement: <ErrorPage />,
     },
     {
     path: "/leaderboard",
-    element: <ProtectedRoute><Leaderboard /></ProtectedRoute>,
+    element: <>
+    <ScrollToTop/>
+    <ProtectedRoute><Leaderboard /></ProtectedRoute>
+    </>,
     errorElement: <ErrorPage />,
     },
     {
     path: "/courses/coming-soon",
-    element: <ProtectedRoute><ComingSoon /></ProtectedRoute>,
+    element: <>
+    <ScrollToTop/>
+    <ProtectedRoute><ComingSoon /></ProtectedRoute>
+    </>,
     errorElement: <ErrorPage />,
     },
 ]);

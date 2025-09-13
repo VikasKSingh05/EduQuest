@@ -1,6 +1,6 @@
 import React from "react";
 import RetroButton from "./RetroButton";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import {
   SignedIn,
   SignedOut,
@@ -8,6 +8,29 @@ import {
 } from "@clerk/clerk-react";
 
 const Header = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleAboutClick = () => {
+    if (location.pathname === "/") {
+      // If already on home page, scroll to desc section
+      const descElement = document.getElementById("desc");
+      if (descElement) {
+        descElement.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // If on other page, navigate to home and then scroll
+      navigate("/");
+      // Use setTimeout to ensure navigation completes before scrolling
+      setTimeout(() => {
+        const descElement = document.getElementById("desc");
+        if (descElement) {
+          descElement.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    }
+  };
+
   return (
     <header className="text-white text-center bg-black flex items-center justify-between px-8 py-3 font-extrabold">
       {/* Logo */}
@@ -32,7 +55,7 @@ const Header = () => {
           <Link to="/dashboard">Dashboard</Link>
           <Link to="/leaderboard">Leaderboard</Link>
         </SignedIn>
-        <a href="#desc">About</a>
+        <button onClick={handleAboutClick} className="hover:text-[#14ADFF] transition-colors">About</button>
       </nav>
 
       {/* Auth buttons */}

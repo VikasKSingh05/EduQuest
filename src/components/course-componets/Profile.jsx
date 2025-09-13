@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useUser } from "@clerk/clerk-react";
+import { useNavigate } from "react-router-dom";
 import { supabase } from "../../SupabaseClient";
 
 function Profile() {
   const { user, isLoaded } = useUser();
+  const navigate = useNavigate();
   const [profile, setProfile] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -41,6 +43,12 @@ function Profile() {
     return Math.floor((points || 0) / 100) + 1;
   };
 
+  const handleProfileClick = () => {
+    if (user) {
+      navigate("/dashboard");
+    }
+  };
+
   if (loading) {
     return (
       <div className="profile-container">
@@ -54,7 +62,7 @@ function Profile() {
           </div>
         </div>
         <div className="profile-button-wrapper">
-          <button className="profile-button">Your Profile</button>
+          <button className="profile-button" onClick={handleProfileClick}>Your Profile</button>
         </div>
       </div>
     );
@@ -76,7 +84,7 @@ function Profile() {
       </div>
 
       <div className="profile-button-wrapper">
-        <button className="profile-button">Your Profile</button>
+        <button className="profile-button" onClick={handleProfileClick}>Your Profile</button>
       </div>
     </div>
   );
