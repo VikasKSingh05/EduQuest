@@ -1,13 +1,52 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useUser } from '@clerk/clerk-react'
+import { useNavigate } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/footer'
 import RetroButton from '../components/RetroButton'
 import ZooQuestions from '../components/ZooQuestions'
 import QuestionCard from '../components/QuestionCard'
+import { useQuizScore } from '../hooks/useQuizScore'
 
 const Zoo = () => {
-  // Move the score state to the Zoo component
+  const { user } = useUser();
+  const navigate = useNavigate();
+  const { submitQuizScore, loading } = useQuizScore();
   const [score, setScore] = useState(0);
+  const [quizCompleted, setQuizCompleted] = useState(false);
+  const [answeredQuestions, setAnsweredQuestions] = useState(0);
+  const [startTime] = useState(Date.now());
+  const [showResults, setShowResults] = useState(false);
+
+  const handleAnswer = (isCorrect) => {
+    if (isCorrect) {
+      setScore(score + 1);
+    }
+    setAnsweredQuestions(answeredQuestions + 1);
+  };
+
+  const handleQuizComplete = async () => {
+    if (!user) {
+      alert("Please sign in to save your progress!");
+      return;
+    }
+
+    const timeSpent = Math.round((Date.now() - startTime) / 1000);
+    const result = await submitQuizScore('zoo', score, ZooQuestions.length, timeSpent);
+    
+    if (result.success) {
+      setShowResults(true);
+      setQuizCompleted(true);
+    } else {
+      alert("Error saving your score. Please try again.");
+    }
+  };
+
+  useEffect(() => {
+    if (answeredQuestions === ZooQuestions.length && !quizCompleted) {
+      handleQuizComplete();
+    }
+  }, [answeredQuestions, quizCompleted]);
 
   return (
     <div className='bg-black'>
@@ -79,9 +118,7 @@ const Zoo = () => {
                 question={questionData.question}
                 options={questionData.options}
                 correctAnswer={questionData.correct}
-                onAnswer={(isCorrect) => {
-                  if (isCorrect) setScore(score + 1);
-                }}
+                onAnswer={handleAnswer}
               />
             </div>
           ))}
@@ -89,8 +126,29 @@ const Zoo = () => {
           {/* Score display */}
           <div className="mt-8 text-white text-center border-t-2 border-[#14ADFF] pt-4">
             <h2 className="text-2xl font-bold" style={{ fontFamily: "heading" }}>
-              Current Score: {score}
+              Current Score: {score}/{ZooQuestions.length}
             </h2>
+            {loading && (
+              <p className="text-[#14ADFF] mt-2">Saving your progress...</p>
+            )}
+            {showResults && (
+              <div className="mt-4 p-4 bg-[#B4E50D]/20 border border-[#B4E50D] rounded-lg">
+                <h3 className="text-xl font-bold text-[#B4E50D] mb-2">Quiz Completed! 🎉</h3>
+                <p className="text-white">Great job! Your score has been saved.</p>
+                <div className="flex justify-center space-x-4 mt-4">
+                  <RetroButton 
+                    text="View Leaderboard" 
+                    onClick={() => navigate("/leaderboard")}
+                    className="px-4 py-2"
+                  />
+                  <RetroButton 
+                    text="Back to Dashboard" 
+                    onClick={() => navigate("/dashboard")}
+                    className="px-4 py-2"
+                  />
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

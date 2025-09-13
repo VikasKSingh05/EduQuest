@@ -10,6 +10,10 @@ import Zoo from './pages/Zoo'
 import Jungle from './pages/Jungle'
 import SignInPage from './pages/SignInPage'
 import SignUpPage from './pages/SignUpPage'
+import SelectAge from './pages/SelectAge'
+import Dashboard from './pages/Dashboard'
+import Leaderboard from './pages/Leaderboard'
+import ProtectedRoute from './components/ProtectedRoute'
 
 const Router = createBrowserRouter([
     {
@@ -54,6 +58,21 @@ const Router = createBrowserRouter([
     {
     path: "/sign-up/*",
     element: <SignUpPage />,
+    errorElement: <ErrorPage />,
+    },
+    {
+    path: "/select-age",
+    element: <ProtectedRoute><SelectAge /></ProtectedRoute>,
+    errorElement: <ErrorPage />,
+    },
+    {
+    path: "/dashboard",
+    element: <ProtectedRoute><Dashboard /></ProtectedRoute>,
+    errorElement: <ErrorPage />,
+    },
+    {
+    path: "/leaderboard",
+    element: <ProtectedRoute><Leaderboard /></ProtectedRoute>,
     errorElement: <ErrorPage />,
     },
 ]);

@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import {
   SignedIn,
   SignedOut,
-  SignInButton,
   UserButton,
 } from "@clerk/clerk-react";
 
@@ -27,9 +26,12 @@ const Header = () => {
         className="flex items-center gap-6 text-base"
         style={{ fontFamily: "regular" }}
       >
-        <a href="https://edu-quest-iota.vercel.app/jungle">Learn</a>
-        <a href="https://edu-quest-iota.vercel.app/zoo">Practice</a>
-        <a href="">Community</a>
+        <Link to="/courses">Learn</Link>
+        <Link to="/all-courses">Practice</Link>
+        <SignedIn>
+          <Link to="/dashboard">Dashboard</Link>
+          <Link to="/leaderboard">Leaderboard</Link>
+        </SignedIn>
         <a href="#desc">About</a>
       </nav>
 
