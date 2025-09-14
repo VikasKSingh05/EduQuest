@@ -14,7 +14,7 @@ export default function Hero() {
       <div className="hero-content">
         <h1 className="hero-title">Welcome to the Zoo</h1>
         <p className="hero-desc">
-          Welcome to the magical jungle — where every tree hides a secret and every animal has a story to tell!
+          Welcome to the magical Zoo — where every tree hides a secret and every animal has a story to tell!
         </p>
         <button onClick={scrollToSection} className="hero-btn">
           Explore

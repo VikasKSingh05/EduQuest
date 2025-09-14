@@ -8,9 +8,8 @@ function Game() {
 
         <div className="game-text">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
-            facere dolor ea quae, nulla adipisci hic omnis reprehenderit
-            voluptatum amet.
+            Dive into our interactive zoo adventure game! Explore, learn, and
+            have fun while discovering the wonders of the animal kingdom.
           </p>
         </div>
 
