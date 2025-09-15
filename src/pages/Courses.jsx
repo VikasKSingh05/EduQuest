@@ -41,8 +41,17 @@ const Courses = () => {
                   title={course.title}
                   desc={course.description}
                   source={course.image}
-                  children="Start Quest"
-                />
+                >
+              {course.link && (
+                  <a
+                    href={course.link}
+                    className="bg-pink-300 hover:bg-pink-600 text-white font-pixel px-4 py-2 rounded mt-2 inline-block"
+                    style={{ fontFamily: "button_text" }}
+                  >
+                    Start Quest
+                  </a>
+                )}
+                  </RetroCards>
              </div>
           ))}
         </div>
