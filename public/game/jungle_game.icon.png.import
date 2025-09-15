@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0i513eq5pbmx"
-path="res://.godot/imported/jungle_game.icon.png-aeb3cf5ccad54ed438a3e70b4b424bf1.ctex"
+uid="uid://br7m42bna5p1a"
+path="res://.godot/imported/jungle_game.icon.png-0cfc1db675fef566c05e1e72d3b4799f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gam/jungle_game.icon.png"
-dest_files=["res://.godot/imported/jungle_game.icon.png-aeb3cf5ccad54ed438a3e70b4b424bf1.ctex"]
+source_file="res://final_game/jungle_game.icon.png"
+dest_files=["res://.godot/imported/jungle_game.icon.png-0cfc1db675fef566c05e1e72d3b4799f.ctex"]
 
 [params]
 

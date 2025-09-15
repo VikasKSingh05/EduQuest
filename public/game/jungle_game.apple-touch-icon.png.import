@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckxedwn8ii53k"
-path="res://.godot/imported/jungle_game.apple-touch-icon.png-7773192303a7d118b51c28c9decc95ee.ctex"
+uid="uid://cwqk28jvygphd"
+path="res://.godot/imported/jungle_game.apple-touch-icon.png-071e998432b971bb062e62e837760b59.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gam/jungle_game.apple-touch-icon.png"
-dest_files=["res://.godot/imported/jungle_game.apple-touch-icon.png-7773192303a7d118b51c28c9decc95ee.ctex"]
+source_file="res://final_game/jungle_game.apple-touch-icon.png"
+dest_files=["res://.godot/imported/jungle_game.apple-touch-icon.png-071e998432b971bb062e62e837760b59.ctex"]
 
 [params]
 
