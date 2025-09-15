@@ -41,6 +41,7 @@ const Courses = () => {
                   title={course.title}
                   desc={course.description}
                   source={course.image}
+                  children="Start Quest"
                 />
              </div>
           ))}
