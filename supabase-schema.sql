@@ -7,7 +7,6 @@ CREATE TABLE IF NOT EXISTS profiles (
   id TEXT PRIMARY KEY,
   name TEXT NOT NULL,
   points INTEGER DEFAULT 0,
-  age_category TEXT CHECK (age_category IN ('kids', 'teens', 'adults')),
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
@@ -84,8 +83,7 @@ RETURNS TABLE (
   rank BIGINT,
   id TEXT,
   name TEXT,
-  points INTEGER,
-  age_category TEXT
+  points INTEGER
 ) AS $$
 BEGIN
   RETURN QUERY
@@ -93,8 +91,7 @@ BEGIN
     ROW_NUMBER() OVER (ORDER BY p.points DESC) as rank,
     p.id,
     p.name,
-    p.points,
-    p.age_category
+    p.points
   FROM profiles p
   ORDER BY p.points DESC
   LIMIT limit_count;
