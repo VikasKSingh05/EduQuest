@@ -18,7 +18,7 @@ createRoot(root).render(
     <ClerkProvider 
       publishableKey={PUBLISHABLE_KEY}
       signInFallbackRedirectUrl="/dashboard"
-      signUpFallbackRedirectUrl="/select-age"
+      signUpFallbackRedirectUrl="/dashboard"
     >
       <App />
     </ClerkProvider>

@@ -10,7 +10,6 @@ import AllCourses from './pages/AllCourses'
 import ScrollToTop from './components/ScrollToTop'
 import SignInPage from './pages/SignInPage'
 import SignUpPage from './pages/SignUpPage'
-import SelectAge from './pages/SelectAge'
 import Dashboard from './pages/Dashboard'
 import Leaderboard from './pages/Leaderboard'
 import ComingSoon from './pages/ComingSoon'
@@ -79,14 +78,6 @@ const Router = createBrowserRouter([
     element: <>
     <ScrollToTop/>
     <SignUpPage />
-    </>,
-    errorElement: <ErrorPage />,
-    },
-    {
-    path: "/select-age",
-    element: <>
-    <ScrollToTop/>
-    <ProtectedRoute><SelectAge /></ProtectedRoute>
     </>,
     errorElement: <ErrorPage />,
     },
