@@ -20,7 +20,7 @@ const Leaderboard = () => {
         // Fetch top 10 leaders
         let { data: leadersData } = await supabase
           .from("profiles")
-          .select("name, points, age_category")
+          .select("name, points")
           .order("points", { ascending: false })
           .limit(10);
         
@@ -30,7 +30,7 @@ const Leaderboard = () => {
         if (user) {
           let { data: userData } = await supabase
             .from("profiles")
-            .select("name, points, age_category")
+            .select("name, points")
             .eq("id", user.id)
             .single();
 
@@ -202,7 +202,6 @@ const Leaderboard = () => {
                       </div>
                       <div>
                         <div className="text-white font-bold text-xl" style={{ fontFamily: "heading" }}>{leader.name}</div>
-                        <div className="text-gray-400 text-sm capitalize" style={{ fontFamily: "regular" }}>{leader.age_category}</div>
                       </div>
                     </div>
                   </div>
@@ -229,7 +228,6 @@ const Leaderboard = () => {
                   <div className="text-4xl text-[#14ADFF]">👤</div>
                   <div>
                     <div className="text-white font-bold text-xl" style={{ fontFamily: "heading" }}>{userRank.name}</div>
-                    <div className="text-gray-300 text-sm capitalize" style={{ fontFamily: "regular" }}>{userRank.age_category}</div>
                   </div>
                 </div>
                 <div className="text-right">

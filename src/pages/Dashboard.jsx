@@ -13,12 +13,14 @@ const Dashboard = () => {
   const navigate = useNavigate();
   const [profile, setProfile] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState("");
 
   useEffect(() => {
     const fetchProfile = async () => {
       if (!user) return;
       
       try {
+        setLoadError("");
         let { data } = await supabase
           .from("profiles")
           .select("*")
@@ -26,17 +28,39 @@ const Dashboard = () => {
           .single();
         
         if (!data) {
-          navigate("/select-age");
+          // Age-agnostic flow: create a profile without requiring age_category.
+          const displayName = user.firstName || user.fullName || "Anonymous";
+          const { data: inserted, error: insertError } = await supabase
+            .from("profiles")
+            .insert([
+              {
+                id: user.id,
+                name: displayName,
+                points: 0,
+              },
+            ])
+            .select("*")
+            .single();
+
+          if (insertError) {
+            // Another effect (e.g. useSyncUser) may have created the row already.
+            let { data: retryData } = await supabase
+              .from("profiles")
+              .select("*")
+              .eq("id", user.id)
+              .single();
+            setProfile(retryData);
+            return;
+          }
+
+          setProfile(inserted);
           return;
         }
-        if (!data.age_category) {
-          navigate("/select-age");
-          return;
-        }
-        
-        setProfile(data);
+
+        setProfile(data); // age_category may be null; that's fine.
       } catch (error) {
         console.error("Error fetching profile:", error);
+        setLoadError("Unable to connect to Supabase. Please check your project URL/API key and try again.");
       } finally {
         setLoading(false);
       }
@@ -44,77 +68,72 @@ const Dashboard = () => {
     fetchProfile();
   }, [user, navigate]);
 
-  const courses = {
-    kids: [
-      { 
-        title: "ZooTopia", 
-        description: "Step into the wild and explore the fascinating world of animals, their habitats in a fun, interactive way.",
-        link: "/courses/zoo",
-        image: "/image/origbig3.png",
-        points: 10
-      },
-      { 
-        title: "Our Planet, Our Home", 
-        description: "Explore the fundamentals of our environment, its ecosystems, and the importance of protecting our planet.",
-        link: "/courses/coming-soon",
-        image: "/image/origbig1.png",
-        points: 10
-      },
-      { 
-        title: "Ocean Mysteries", 
-        description: "Uncover the secrets of the deep blue sea and its amazing creatures.",
-        link: "/courses/coming-soon",
-        image: "/image/origbig4.png",
-        points: 10
-      }
-    ],
-    teens: [
-      { 
-        title: "Jungle Detectives", 
-        description: "Dive into the world of wildlife and ecosystems, learning to observe and understand nature around us.",
-        link: "/courses/jungle",
-        image: "/image/origbig2.png",
-        points: 10
-      },
-      { 
-        title: "Climate Guardians", 
-        description: "Learn about climate change and how you can become a guardian of our planet.",
-        link: "/courses/coming-soon",
-        image: "/image/origbig5.png",
-        points: 10
-      },
-      { 
-        title: "Plastic Pirates", 
-        description: "Join the fight against plastic pollution and discover ways to reduce waste.",
-        link: "/courses/coming-soon",
-        image: "/image/origbig6.png",
-        points: 10
-      }
-    ],
-    adults: [
-      { 
-        title: "Recycling Basics", 
-        description: "Learn how to sort and recycle different materials and keep our planet clean",
-        link: "/courses/coming-soon",
-        image: "/image/banner2.png",
-        points: 10
-      },
-      { 
-        title: "Save Water", 
-        description: "Discover simple ways to conserve water",
-        link: "/courses/coming-soon",
-        image: "/image/banner1.png",
-        points: 10
-      },
-      { 
-        title: "Green Energy", 
-        description: "Explore renewable energy sources and technologies",
-        link: "/courses/coming-soon",
-        image: "/image/banner4.gif",
-        points: 10
-      }
-    ],
-  };
+  const courses = [
+    // Combined, age-agnostic course catalog.
+    { 
+      title: "ZooTopia", 
+      description: "Step into the wild and explore the fascinating world of animals, their habitats in a fun, interactive way.",
+      link: "/courses/zoo",
+      image: "/image/origbig3.png",
+      points: 10
+    },
+    { 
+      title: "Our Planet, Our Home", 
+      description: "Explore the fundamentals of our environment, its ecosystems, and the importance of protecting our planet.",
+      link: "/courses/coming-soon",
+      image: "/image/origbig1.png",
+      points: 10
+    },
+    { 
+      title: "Ocean Mysteries", 
+      description: "Uncover the secrets of the deep blue sea and its amazing creatures.",
+      link: "/courses/coming-soon",
+      image: "/image/origbig4.png",
+      points: 10
+    },
+    { 
+      title: "Jungle Detectives", 
+      description: "Dive into the world of wildlife and ecosystems, learning to observe and understand nature around us.",
+      link: "/courses/jungle",
+      image: "/image/origbig2.png",
+      points: 10
+    },
+    { 
+      title: "Climate Guardians", 
+      description: "Learn about climate change and how you can become a guardian of our planet.",
+      link: "/courses/coming-soon",
+      image: "/image/origbig5.png",
+      points: 10
+    },
+    { 
+      title: "Plastic Pirates", 
+      description: "Join the fight against plastic pollution and discover ways to reduce waste.",
+      link: "/courses/coming-soon",
+      image: "/image/origbig6.png",
+      points: 10
+    },
+    { 
+      title: "Recycling Basics", 
+      description: "Learn how to sort and recycle different materials and keep our planet clean",
+      link: "/courses/coming-soon",
+      image: "/image/banner2.png",
+      points: 10
+    },
+    { 
+      title: "Save Water", 
+      description: "Discover simple ways to conserve water",
+      link: "/courses/coming-soon",
+      image: "/image/banner1.png",
+      points: 10
+    },
+    { 
+      title: "Green Energy", 
+      description: "Explore renewable energy sources and technologies",
+      link: "/courses/coming-soon",
+      image: "/image/banner4.gif",
+      points: 10
+    }
+  ];
 
   if (loading) {
     return (
@@ -125,10 +144,33 @@ const Dashboard = () => {
   }
 
   if (!profile) {
-    return null; 
+    return (
+      <div className="min-h-screen bg-black flex items-center justify-center px-6">
+        <div className="bg-[#12122b] border-2 border-[#68696a] rounded-xl p-6 max-w-xl w-full text-center">
+          <div className="text-white text-2xl mb-3" style={{ fontFamily: "heading" }}>
+            Dashboard Unavailable
+          </div>
+          <p className="text-gray-300 mb-6" style={{ fontFamily: "regular" }}>
+            {loadError || "Your profile is not available right now. Please try again."}
+          </p>
+          <div className="flex justify-center gap-3">
+            <RetroButton
+              text="Retry"
+              onClick={() => window.location.reload()}
+              className="px-6 py-2"
+            />
+            <RetroButton
+              text="All Courses"
+              onClick={() => navigate("/all-courses")}
+              className="px-6 py-2"
+            />
+          </div>
+        </div>
+      </div>
+    );
   }
 
-  const recommended = courses[profile.age_category] || [];
+  const recommended = courses;
 
   return (
     <div className="relative bg-[#020618] min-h-screen overflow-hidden">
@@ -166,8 +208,8 @@ const Dashboard = () => {
               <div className="text-sm">Total Points</div>
             </div>
             <div className="bg-[#12122b] border-2 border-[#68696a] rounded-lg p-4">
-              <div className="text-2xl font-bold text-[#B4E50D]">{profile.age_category}</div>
-              <div className="text-sm">Age Group</div>
+              <div className="text-2xl font-bold text-[#B4E50D]">All Ages</div>
+              <div className="text-sm">Learning Path</div>
             </div>
           </div>
         </div>
