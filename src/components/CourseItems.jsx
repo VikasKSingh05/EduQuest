@@ -3,7 +3,7 @@ const CourseItems = [
     image: "/image/origbig1.png",
     title: "Our Planet, Our Home",
     description: "Explore the fundamentals of our environment, its ecosystems, and the importance of protecting our planet.",
-    link: "/courses/coming-soon"
+    link: "/courses/our-planet-our-home"
   },
   {
     image: "/image/origbig2.png",
