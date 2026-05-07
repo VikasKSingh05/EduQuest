@@ -11,54 +11,26 @@ const ComingSoon = () => {
 
   const comingSoonCourses = [
     { 
-      title: "Our Planet, Our Home", 
-      description: "Explore the fundamentals of our environment, its ecosystems, and the importance of protecting our planet.",
+      title: "Eco Cities Lab", 
+      description: "Design greener cities with public transport, urban forests, and cleaner air systems.",
       image: "/image/origbig1.png",
       points: 10,
       status: "Coming Soon"
     },
     { 
-      title: "Ocean Mysteries", 
-      description: "Uncover the secrets of the deep blue sea and its amazing creatures.",
+      title: "Wildlife Rescue Mission", 
+      description: "Learn how conservation teams rescue, rehabilitate, and release injured wildlife.",
       image: "/image/origbig4.png",
       points: 10,
       status: "Coming Soon"
     },
     { 
-      title: "Climate Guardians", 
-      description: "Learn about climate change and how you can become a guardian of our planet.",
+      title: "Food Forest Challenge", 
+      description: "Build a balanced mini-ecosystem and discover sustainable food practices.",
       image: "/image/origbig5.png",
       points: 10,
       status: "Coming Soon"
     },
-    { 
-      title: "Plastic Pirates", 
-      description: "Join the fight against plastic pollution and discover ways to reduce waste.",
-      image: "/image/origbig6.png",
-      points: 10,
-      status: "Coming Soon"
-    },
-    { 
-      title: "Recycling Basics", 
-      description: "Learn how to sort and recycle different materials and keep our planet clean",
-      image: "/image/banner2.png",
-      points: 10,
-      status: "Coming Soon"
-    },
-    { 
-      title: "Save Water", 
-      description: "Discover simple ways to conserve water",
-      image: "/image/banner1.png",
-      points: 10,
-      status: "Coming Soon"
-    },
-    { 
-      title: "Green Energy", 
-      description: "Explore renewable energy sources and technologies",
-      image: "/image/banner4.gif",
-      points: 10,
-      status: "Coming Soon"
-    }
   ];
 
   return (

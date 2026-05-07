@@ -80,14 +80,14 @@ const Dashboard = () => {
     { 
       title: "Our Planet, Our Home", 
       description: "Explore the fundamentals of our environment, its ecosystems, and the importance of protecting our planet.",
-      link: "/courses/coming-soon",
+      link: "/courses/our-planet-our-home",
       image: "/image/origbig1.png",
       points: 10
     },
     { 
       title: "Ocean Mysteries", 
       description: "Uncover the secrets of the deep blue sea and its amazing creatures.",
-      link: "/courses/coming-soon",
+      link: "/courses/ocean-mysteries",
       image: "/image/origbig4.png",
       points: 10
     },
@@ -101,35 +101,35 @@ const Dashboard = () => {
     { 
       title: "Climate Guardians", 
       description: "Learn about climate change and how you can become a guardian of our planet.",
-      link: "/courses/coming-soon",
+      link: "/courses/climate-guardians",
       image: "/image/origbig5.png",
       points: 10
     },
     { 
       title: "Plastic Pirates", 
       description: "Join the fight against plastic pollution and discover ways to reduce waste.",
-      link: "/courses/coming-soon",
+      link: "/courses/plastic-pirates",
       image: "/image/origbig6.png",
       points: 10
     },
     { 
       title: "Recycling Basics", 
       description: "Learn how to sort and recycle different materials and keep our planet clean",
-      link: "/courses/coming-soon",
+      link: "/courses/recycling-basics",
       image: "/image/banner2.png",
       points: 10
     },
     { 
       title: "Save Water", 
       description: "Discover simple ways to conserve water",
-      link: "/courses/coming-soon",
+      link: "/courses/save-water",
       image: "/image/banner1.png",
       points: 10
     },
     { 
       title: "Green Energy", 
       description: "Explore renewable energy sources and technologies",
-      link: "/courses/coming-soon",
+      link: "/courses/green-energy",
       image: "/image/banner4.gif",
       points: 10
     }
