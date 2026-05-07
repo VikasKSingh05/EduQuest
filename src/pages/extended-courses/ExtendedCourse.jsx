@@ -14,6 +14,13 @@ const ExtendedCourse = () => {
     return <Navigate to="/all-courses" replace />;
   }
 
+  const handleExploreClick = () => {
+    const quizSection = document.getElementById("quiz");
+    if (quizSection) {
+      quizSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div>
       <Header />
@@ -23,7 +30,7 @@ const ExtendedCourse = () => {
         style={{ backgroundImage: `url('${course.heroImage}')` }}
       >
         <div className="absolute inset-0 bg-black/70" />
-        <div className="relative z-10 max-w-4xl px-8 md:px-24 pb-10 md:pb-0 ml-4 md:ml-10">
+        <div className="relative z-10 max-w-4xl px-12 md:px-24 pb-10 md:pb-0 ml-4 md:ml-10">
           <div
             className="text-3xl md:text-6xl text-white mb-5 leading-tight"
             style={{ fontFamily: "heading", textShadow: "4px 4px 0 #000" }}
@@ -31,11 +38,14 @@ const ExtendedCourse = () => {
             {course.title}
           </div>
           <div
-            className="text-base md:text-3xl text-white max-w-3xl leading-relaxed"
+            className="text-lg md:text-3xl text-white max-w-3xl mb-10 leading-relaxed"
             style={{ fontFamily: "regular" }}
           >
             {course.subtitle}
           </div>
+          <button onClick={handleExploreClick} className="hero-btn">
+            Explore
+          </button>
         </div>
       </div>
 
