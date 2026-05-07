@@ -14,6 +14,7 @@ import Dashboard from './pages/Dashboard'
 import Leaderboard from './pages/Leaderboard'
 import ComingSoon from './pages/ComingSoon'
 import ProtectedRoute from './components/ProtectedRoute'
+import ExtendedCourse from './pages/extended-courses/ExtendedCourse'
 
 const Router = createBrowserRouter([
     {
@@ -102,6 +103,14 @@ const Router = createBrowserRouter([
     element: <>
     <ScrollToTop/>
     <ProtectedRoute><ComingSoon /></ProtectedRoute>
+    </>,
+    errorElement: <ErrorPage />,
+    },
+    {
+    path: "/courses/:courseId",
+    element: <>
+    <ScrollToTop/>
+    <ProtectedRoute><ExtendedCourse /></ProtectedRoute>
     </>,
     errorElement: <ErrorPage />,
     },
